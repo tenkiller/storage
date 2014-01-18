@@ -70,6 +70,8 @@
     <Content Include="app\service.js" />
     <Content Include="app\storage.js" />
     <Content Include="index.html" />
+    <Content Include="tests\provider\provider-tests.html" />
+    <Content Include="tests\provider\provider-tests.js" />
     <Content Include="tests\qunit-1.13.0.css" />
     <Content Include="tests\qunit-1.13.0.js" />
     <Content Include="tests\storage\storage-tests.html" />
@@ -82,7 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="tests\cache\" />
-    <Folder Include="tests\requests\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

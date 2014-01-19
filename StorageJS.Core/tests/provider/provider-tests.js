@@ -3,21 +3,28 @@
 
 module('Provider Unit Tests');
 
+QUnit.config.testTimeout = 10000;
+
 var provider = new storageJS.provider(),
-    getOptions = { url: '//localhost' };
+    testData = ['test data'],
+    options = function () { return testData; };
 
 test('Initialization', function (assert) {
   assert.strictEqual(typeof provider, 'object', 'Provider object instantiated.');
 });
 
-test('Register request', function (assert) {
-  provider.register('getData', getOptions);
-});
+asyncTest('Register and execute request', function (assert) {
+  provider.register('getData', options);
+  assert.strictEqual(typeof provider.keymap['getData'], 'function', 'Request is registered');
 
-test('Execute request', function (assert) {
-  
+  provider.request('getData').done(function (data) {
+    assert.ok(true, 'Request executed');
+    assert.strictEqual(testData, data, 'Expected data returned')
+    start();
+  });
 });
 
 test('Remove request', function (assert) {
   provider.remove('getData');
+  assert.strictEqual(provider.keymap['getData'], undefined, 'Request is removed');
 });

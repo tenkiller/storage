@@ -8,7 +8,7 @@ var storageJS = storageJS || {};
   * @param {string} type
   */
   var storage = function (type) {
-    this.store = (type === 'local') ? localStorage || {} : sessionStorage || {};
+    this.store = (type === 'local') ? localStorage : sessionStorage;
   };
 
   /*
@@ -61,13 +61,12 @@ var storageJS = storageJS || {};
   * @method clear
   */
   storage.prototype.clear = function () {
-    if (this.store.constructor === Storage) {
-      this.store.clear();
-    } else {
-      this.store = {};
-    }
+    this.store.clear();
   };
 
-  ns.storage = storage;
+  ns.storage = {
+    local: new storage('local'),
+    session: new storage()
+  };
 
 })(storageJS);

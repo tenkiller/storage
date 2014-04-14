@@ -3,7 +3,7 @@
 
 module('Unit Tests');
 
-var session = new storageJS.storage(),
+var session = storageJS.storage.session,
     obj = { data: [1, 2, 3, 4] };
 
 test('Initialization', function (assert) {

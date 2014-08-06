@@ -19,11 +19,27 @@ var storageJS = storageJS || {};
   cache.prototype.get = function (key) {
     var entry = this.keymap[key];
 
-    if (entry === undefined) return;
+    if (entry === undefined) { return; }
 
-    if (entry === this.head) return entry;
+    if (entry === this.head) { return entry; }
 
-    // TODO: determine which entry in the list to return
+    // orphan the entry
+    if (entry === this.tail) {
+      this.tail = entry.next;
+      this.tail.prev = undefined;
+    } else {
+      entry.prev.next = entry.next;
+      entry.next.prev = entry.prev;
+    }
+
+    // move it to the head
+    entry.prev = this.head;
+    entry.next = undefined;
+
+    this.head.next = entry;
+    this.head = entry;
+
+    return entry;
   };
 
   /*

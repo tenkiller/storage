@@ -1,7 +1,7 @@
 ﻿/// <reference path="../qunit-1.13.0.js" />
 /// <reference path="../../app/storage.js" />
 
-module('Unit Tests');
+module('Storage Unit Tests');
 
 var session = storageJS.storage.session,
     obj = { data: [1, 2, 3, 4] };

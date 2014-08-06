@@ -25,18 +25,18 @@ var storageJS = storageJS || {};
 
     // orphan the entry
     if (entry === this.tail) {
-      this.tail = entry.next;
-      this.tail.prev = undefined;
+      this.tail = entry.prev;
+      this.tail.next = undefined;
     } else {
       entry.prev.next = entry.next;
       entry.next.prev = entry.prev;
     }
 
     // move it to the head
-    entry.prev = this.head;
-    entry.next = undefined;
+    entry.prev = undefined;
+    entry.next = this.head;
 
-    this.head.next = entry;
+    this.head.prev = entry;
     this.head = entry;
 
     return entry;

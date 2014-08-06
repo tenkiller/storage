@@ -70,6 +70,8 @@
     <Content Include="app\service.js" />
     <Content Include="app\storage.js" />
     <Content Include="index.html" />
+    <Content Include="tests\cache\cache-tests.html" />
+    <Content Include="tests\cache\cache-tests.js" />
     <Content Include="tests\provider\provider-tests.html" />
     <Content Include="tests\provider\provider-tests.js" />
     <Content Include="tests\qunit-1.13.0.css" />
@@ -82,9 +84,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="tests\cache\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

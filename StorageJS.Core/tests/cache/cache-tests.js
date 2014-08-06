@@ -1,7 +1,7 @@
 ﻿/// <reference path="../qunit-1.13.0.js" />
 /// <reference path="../../app/cache.js" />
 
-module('Storage Unit Tests');
+module('Cache Unit Tests');
 
 var cache = storageJS.cache;
 cache.push('A', 1);

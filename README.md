@@ -1,10 +1,8 @@
-#StorageJS
-=========
+##About
 
 This JavaScript project implements web storage (local or session), http request management, and client-side cache in a module called storageJS. It's not a catchy name, but, for me, it gets the point across.
 
-##About
-=========
+##Background
 
 After working with various single-page web applications over the last several years, I began to get frustrated that many third-party JavaScript libraries implemented web storage, http request management, and client-side cache in simple and elegant ways. I prefer simplification over complication. I don't need a library or framework that can do everything for everybody. I just wanted something that did what I wanted in a straightforward way. This is the genesis of StorageJS. 
 

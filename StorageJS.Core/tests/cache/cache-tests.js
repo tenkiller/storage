@@ -17,7 +17,7 @@ test('Store and retrieve value', function (assert) {
 
 test('LRU cache behavior', function (assert) {
   assert.strictEqual(cache.fetch('A').key, cache.tail.key, 'Entry "A" is the least recently used, {"C", "B", "A"}.');
-  assert.strictEqual(cache.fetch('C').key, cache.head.key, 'Entry "C" is the most recently used, {"C", "B", "A"}.');
+  assert.strictEqual(cache.fetch('C').key, cache.head.key, 'Entry "C" is the most recently used.');
 
   var entry = cache.push('D', 4);
   assert.strictEqual(cache.size, 3, 'Cache size still equal to 3 after addition of "D" entry, {"D", "C", "B"}.');
@@ -26,5 +26,5 @@ test('LRU cache behavior', function (assert) {
   assert.strictEqual(cache.fetch('B').key, cache.tail.key, 'Entry "B" is the least recently used, {"D", "C", "B"}.');
   entry = cache.get('B');
   assert.strictEqual(cache.fetch('B').key, cache.head.key, 'Entry "B" is now the most recently used, {"B", "D", "C"}.');
-  assert.strictEqual(cache.fetch('C').key, cache.tail.key, 'Entry "C" is now the least recently used, {"B", "D", "C"}.');
+  assert.strictEqual(cache.fetch('C').key, cache.tail.key, 'Entry "C" is now the least recently used.');
 });

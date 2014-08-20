@@ -140,6 +140,9 @@ csx
 AppPackages/
 
 # Others
+[Ww]eb.[Dd]ebug.config
+[Ww]eb.[Rr]elease.config
+[Pp]roperties/
 sql/
 *.Cache
 ClientBin/
